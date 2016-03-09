@@ -1,0 +1,71 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lista de Productos</h1>
+
+
+<%= form_tag "/productos", method: :get do |f| %>
+  
+  <%= label_tag "Nombre" %>
+  <%= text_field_tag :referencia %>
+  <%= submit_tag "Buscar" %>
+  
+  <% end%>
+
+<ul>
+  <% @productos.each do |producto| %>
+    <li class="producto">
+      <span class="producto-referencia"><%= producto.referencia %></span>
+    </li>
+  <% end %>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Referencia</th>
+      <th>Marca</th>
+      <th>Talla</th>
+      <th>Tipo de producto</th>
+      <th>Color</th>
+      <th>Categoria</th>
+      <th>Stock</th>
+      <th>Tela</th>
+      <th>Descripcion</th>
+      <th>Costo</th>
+      <th>Precio de venta</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @productos.each do |producto| %>
+      <tr>
+        <td><%= producto.referencia %></td>
+        <td><%= producto.marca %></td>
+        <td><%= producto.talla %></td>
+        <td><%= producto.tipo_producto %></td>
+        <td><%= producto.color %></td>
+        <td><%= producto.categoria %></td>
+        <td><%= producto.stock %></td>
+        <td><%= producto.tela %></td>
+        <td><%= producto.descripcion %></td>
+        <td><%= producto.costo %></td>
+        <td><%= producto.preciodeventa %></td>
+        <td><%= link_to 'Show', producto %></td>
+        <td><%= link_to 'Edit', edit_producto_path(producto) %></td>
+        <td><%= link_to 'Destroy', producto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<h2>Stock actual:</h2> <%= producto.sum %>
+
+
+
+
+
+<br>
+
+<%= link_to 'New Producto', new_producto_path %>

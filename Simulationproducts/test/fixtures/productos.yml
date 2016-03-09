@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  marca: MyString
+  talla: MyString
+  referencia: MyString
+  color: MyString
+  stock: 1
+  descripcion: MyString
+  costo: 1.5
+  preciodeventa: 1.5
+
+two:
+  marca: MyString
+  talla: MyString
+  referencia: MyString
+  color: MyString
+  stock: 1
+  descripcion: MyString
+  costo: 1.5
+  preciodeventa: 1.5

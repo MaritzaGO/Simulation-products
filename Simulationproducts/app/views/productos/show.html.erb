@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Referencia:</strong>
+  <%= @producto.referencia %>
+</p>
+
+<p>
+  <strong>Marca:</strong>
+  <%= @producto.marca %>
+</p>
+
+<p>
+  <strong>Talla:</strong>
+  <%= @producto.talla %>
+</p>
+
+<p>
+  <strong>Tipo de producto:</strong>
+  <%= @producto.tipo_producto %>
+</p>
+
+
+<p>
+  <strong>Color:</strong>
+  <%= @producto.color %>
+</p>
+
+<p>
+  <strong>Categoria:</strong>
+  <%= @producto.categoria %>
+</p>
+
+
+
+<p>
+  <strong>Stock:</strong>
+  <%= @producto.stock %>
+</p>
+
+
+<p>
+  <strong>Tela:</strong>
+  <%= @producto.tela %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @producto.descripcion %>
+</p>
+
+<p>
+  <strong>Costo:</strong>
+  <%= @producto.costo %>
+</p>
+
+<p>
+  <strong>Precio de venta:</strong>
+  <%= @producto.preciodeventa %>
+</p>
+
+<%= link_to 'Edit', edit_producto_path(@producto) %> |
+<%= link_to 'Back', productos_path %>
