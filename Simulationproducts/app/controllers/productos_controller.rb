@@ -24,9 +24,11 @@ class ProductosController < ApplicationController
     #@productos = Producto.includes(:categoria).limit(10)
     #@productos = Producto.where("cantidad > ? AND tipo = ?", 100, "hombre")
     @productos = Producto.where("referencia like  ? ", "%#{params[:referencia]}%")
+    @productos = Producto.where("tipo_producto like  ? ", "%#{params[:tipo_producto]}%")
     #pluck, sum, minimum, maximum, average
-    @productos = Producto.sum(:stock)
-    @productos = Producto.maximum(:costo)
+    @total_stock = Producto.sum(:stock)
+    @maximo_costo = Producto.maximum(:costo)
+    @promedio_ventas = Producto.average(:preciodeventa)
 
   end
 

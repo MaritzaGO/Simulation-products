@@ -1,7 +1,41 @@
 Rails.application.routes.draw do
+  
+  resources :buyers
   resources :productos
+  resources :promociones
+  resources :reportes_de_ventas
+  resources :productos_types
+
+
 
   root 'productos#index'
+
+  resources :buyers do
+  #Pertenece a un solo elemento
+    member do
+      get :inactivar
+      post :suscribir
+    end
+
+  #Pertenece a varios elementos
+  collection do
+    get :search
+  end
+
+  resources :promociones
+  end
+
+  namespace :admin do
+    resources :productos
+  end
+
+  #Encerrar un grupo con logica
+  scope '/admin' do
+    resources :reportes_de_ventas
+  end
+
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

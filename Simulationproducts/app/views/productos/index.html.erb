@@ -2,22 +2,19 @@
 
 <h1>Lista de Productos</h1>
 
-
-<%= form_tag "/productos", method: :get do |f| %>
-  
-  <%= label_tag "Nombre" %>
-  <%= text_field_tag :referencia %>
-  <%= submit_tag "Buscar" %>
+<h2>Buscar referencia:</h2>
+  <%= form_tag "/productos", method: :get do |f| %>
+  <%= label_tag "Referencia" %>
+  <%= text_field_tag :referencia %><span class="button"><%= submit_tag "Buscar" %></span>
   
   <% end%>
 
-<ul>
-  <% @productos.each do |producto| %>
-    <li class="producto">
-      <span class="producto-referencia"><%= producto.referencia %></span>
-    </li>
-  <% end %>
-</ul>
+<h2>Tipo de producto:</h2>
+  <%= form_tag "/productos", method: :get do |f| %>
+  <%= label_tag "Digite tipo de producto" %>
+  <%= text_field_tag :tipo_producto %> <span class="button"><%= submit_tag "Buscar" %></span>
+   
+  <% end%>
 
 <table>
   <thead>
@@ -60,12 +57,12 @@
 </table>
 
 
-<h2>Stock actual:</h2> <%= producto.sum %>
+<h2>Stock actual bodega:</h2> <span><%= @total_stock %></span>
 
-
+<h2>Promedio de venta de productos:</h2><span><%= @promedio_ventas%></span>
 
 
 
 <br>
 
-<%= link_to 'New Producto', new_producto_path %>
+<%= link_to 'Nuevo producto', new_producto_path %>

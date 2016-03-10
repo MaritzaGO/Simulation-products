@@ -1,7 +1,7 @@
 class Producto < ActiveRecord::Base
 
 validates :marca, :talla, :referencia, :color, :stock, :descripcion, :costo, :preciodeventa, presence: true
-validates :marca, inclusion: {in: %w(Adidas Nike Reebok LaCoste Americanino Chevignon edc gef), message: "%{value} No es una marca valida"}
+validates :marca, inclusion: {in: %w(Adidas Nike Reebok LaCoste Americanino Chevignon Edc Gef Stop Jeans), message: "%{value} No es una marca valida"}
 validates :talla, inclusion: {in: %w(S M L XL XXl), message: "%{value} No es una talla valida"}
 validates :referencia, length: { is:5 }
 validates :stock, numericality: {only_integer: true}

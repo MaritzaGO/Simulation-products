@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @buyer.name %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @buyer.lastname %>
+</p>
+
+<p>
+  <strong>Identification:</strong>
+  <%= @buyer.identification %>
+</p>
+
+<p>
+  <strong>Edad:</strong>
+  <%= @buyer.edad %>
+</p>
+
+<p>
+  <strong>Profesion:</strong>
+  <%= @buyer.profesion %>
+</p>
+
+<%= link_to 'Edit', edit_buyer_path(@buyer) %> |
+<%= link_to 'Back', buyers_path %>
